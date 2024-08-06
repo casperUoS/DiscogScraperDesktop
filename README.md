@@ -31,6 +31,8 @@ To create a csv document:
   <li>See recently created documents</li>
 </ol>
 
+May envtually make a web version of the app aswell
+
 ## Contributing
 
 1. Fork this repo
