@@ -31,7 +31,7 @@ To create a csv document:
   <li>See recently created documents</li>
 </ol>
 
-May envtually make a web version of the app aswell
+May envtually make a web version of the app as well
 
 ## Contributing
 
