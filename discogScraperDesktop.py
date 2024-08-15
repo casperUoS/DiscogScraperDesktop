@@ -100,7 +100,7 @@ Lb1.grid(column=1, row=2)
 
 #List of columns
 Lb2 = Listbox(root)
-items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}", "Title", "Contributor 1", "Genre 1", "Genre 2", "Genre 3", "Genre 4", "Format {310}", "Recording address {502}", "Contents note [505]", "Contents note [505]", "Contents note [505]", "044 Country of manufacture [code]", "Date {260}", "092 (copy condition code)", "490 Collection", "351 Access", "502 Bootleg note"]
+items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}", "Title", "Contributor 1", "Genre 1", "Genre 2", "Genre 3", "Genre 4", "Format {310}", "Recording address {502}", "Contents note [505]", "Contents note [505]", "Contents note [505]", "Copy note {956}" ,"044 Country of manufacture [code]", "Date {260}", "092 (copy condition code)", "490 Collection", "351 Access", "502 Bootleg note"]
 for item in items:
     Lb2.insert(END,item)
 
@@ -165,6 +165,8 @@ def runFun():
                 row.append("\"" + discogs_scraper.getTracks1(release) + "\"")  # contentsNote1
                 row.append("\"" + discogs_scraper.getTracks2(release) + "\"")  # contentsNote 2
                 row.append("")  # contentsNote 3
+            if "Copy note {956}" in columns:
+                row.append("")
             if "044 Country of manufacture [code]" in columns:
                 row.append(discogs_scraper.getCountry(release))  # country
             if "Date {260}" in columns:
