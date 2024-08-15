@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="469cc4f0-f686-4f5d-87e3-7749977d6572" name="Changes" comment="changed name of zip">
+    <list default="true" id="469cc4f0-f686-4f5d-87e3-7749977d6572" name="Changes" comment="Added copy note">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discogScraperDesktop.py" beforeDir="false" afterPath="$PROJECT_DIR$/discogScraperDesktop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discogScraperDesktop" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -79,7 +83,11 @@
       <workItem from="1721906135511" duration="792000" />
       <workItem from="1721907101353" duration="97000" />
       <workItem from="1721907219504" duration="766000" />
-      <workItem from="1722762538740" duration="3010000" />
+      <workItem from="1722762538740" duration="4544000" />
+      <workItem from="1723058344175" duration="493000" />
+      <workItem from="1723058864685" duration="30000" />
+      <workItem from="1723058944122" duration="175000" />
+      <workItem from="1723717870369" duration="1437000" />
     </task>
     <task id="LOCAL-00001" summary="Prototype">
       <option name="closed" value="true" />
@@ -105,20 +113,67 @@
       <option name="project" value="LOCAL" />
       <updated>1721342014291</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Should hopefully have working mac script">
+      <option name="closed" value="true" />
+      <created>1722801595275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722801595275</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Mac app zip">
+      <option name="closed" value="true" />
+      <created>1722885190435</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722885190435</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed country bug">
+      <option name="closed" value="true" />
+      <created>1723058612618</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723058612618</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added copy note">
+      <option name="closed" value="true" />
+      <created>1723718202714</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723718202714</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Prototype" />
     <MESSAGE value="Added mac version" />
     <MESSAGE value="changed name of zip" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed name of zip" />
+    <MESSAGE value="Should hopefully have working mac script" />
+    <MESSAGE value="Mac app zip" />
+    <MESSAGE value="Fixed country bug" />
+    <MESSAGE value="Added copy note" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added copy note" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DiscogScraperDesktop$discogScraperDesktop.coverage" NAME="discogScraperDesktop Coverage Results" MODIFIED="1722762591987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DiscogScraperDesktop$discogScraperDesktop.coverage" NAME="discogScraperDesktop Coverage Results" MODIFIED="1723718015654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DiscogScraperDesktop$main.coverage" NAME="main Coverage Results" MODIFIED="1721338753713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
