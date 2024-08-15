@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="469cc4f0-f686-4f5d-87e3-7749977d6572" name="Changes" comment="Added copy note">
+    <list default="true" id="469cc4f0-f686-4f5d-87e3-7749977d6572" name="Changes" comment="Added comment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discogScraperDesktop" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="copy-code" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,7 +86,7 @@
       <workItem from="1723058344175" duration="493000" />
       <workItem from="1723058864685" duration="30000" />
       <workItem from="1723058944122" duration="175000" />
-      <workItem from="1723717870369" duration="1437000" />
+      <workItem from="1723717870369" duration="3428000" />
     </task>
     <task id="LOCAL-00001" summary="Prototype">
       <option name="closed" value="true" />
@@ -145,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723718202714</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added comment">
+      <option name="closed" value="true" />
+      <created>1723729559527</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723729559527</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,8 +176,10 @@
     <MESSAGE value="Should hopefully have working mac script" />
     <MESSAGE value="Mac app zip" />
     <MESSAGE value="Fixed country bug" />
+    <MESSAGE value="copy code" />
     <MESSAGE value="Added copy note" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added copy note" />
+    <MESSAGE value="Added comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comment" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DiscogScraperDesktop$discogScraperDesktop.coverage" NAME="discogScraperDesktop Coverage Results" MODIFIED="1723718015654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
