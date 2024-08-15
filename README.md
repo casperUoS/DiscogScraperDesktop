@@ -6,7 +6,7 @@ The purpose of this software is to be able to get data from a list of Discog rel
 
 To download the Mac version of the app, click <a id="raw-url" href="https://raw.githubusercontent.com/casperUoS/DiscogScraperDesktop/main/macApp.zip">here</a>.
 
-Windows version should be out by the 12/08.
+To download the Windows version of the app, click <a id="raw-url" href="https://raw.githubusercontent.com/casperUoS/DiscogScraperDesktop/main/windowsApp.zip">here</a>.
 
 ## User guide
 
