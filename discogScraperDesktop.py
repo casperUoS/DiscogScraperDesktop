@@ -104,6 +104,8 @@ items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label
 for item in items:
     Lb2.insert(END,item)
 
+#ignore
+
 deleteColumnButton = Button(root, text="Delete Column", command=clickedDeleteColumn)
 resetColumnsButton = Button(root, text="Reset Columns", command=clickedResetColumn)
 deleteColumnButton.grid(column=2, row=5)
