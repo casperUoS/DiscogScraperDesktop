@@ -6,8 +6,6 @@ The purpose of this software is to be able to get data from a list of Discog rel
 
 To download the Mac version of the app, click <a id="raw-url" href="https://raw.githubusercontent.com/casperUoS/DiscogScraperDesktop/master/discogScraperDesktop.zip">here</a>.
 
-Windows version should be out by the 12/08.
-
 ## User guide
 
 To create a csv document:
