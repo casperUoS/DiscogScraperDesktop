@@ -23,13 +23,6 @@ item.add_command(label='New')
 menu.add_cascade(label='File', menu=item)
 root.config(menu=menu)
 
-# adding a label to the root window
-lbl = Label(root, text="Enter in URL")
-lbl.grid()
-
-# adding Entry Field
-txt = Entry(root, width=20)
-txt.grid(column=1, row=0)
 
 
 # function to display user text when
@@ -73,46 +66,13 @@ def backSpacePressed(event):
     clickedDelete()
     clickedDeleteColumn()
 
-# button widget with red color text inside
-addBtn = Button(root, text="Add", command=clickedAdd)
-deleteSelectedBtn = Button(root, text="Delete", command=clickedDelete)
-deleteLastBtn = Button(root, text="Delete Last", command=clickedDeleteLast)
-clearBtn = Button(root, text="Clear", command=clickedClear)
-# Set Button Grid
-addBtn.grid(column=2, row=0)
-deleteSelectedBtn.grid(column=3, row=0)
-deleteLastBtn.grid(column=2, row=1)
-clearBtn.grid(column=3, row=1)
+
 
 def select_file():
     path = filedialog.askdirectory(title="Select a File")
     locationLabel.config(text=path)
 
-pathLabel = Label(root, text="File Location")
-pathButton = Button(root, text="Select", command=select_file)
-locationLabel = Label(root, text="Select a File Location!")
-pathLabel.grid(column=0,row=3)
-pathButton.grid(column=1,row=3)
-locationLabel.grid(column=1,row=4)
 
-Lb1 = Listbox(root)
-Lb1.grid(column=1, row=2)
-
-#List of columns
-Lb2 = Listbox(root)
-items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}", "Title", "Contributor 1", "Genre 1", "Genre 2", "Genre 3", "Genre 4", "Format {310}", "Recording address {502}", "Contents note [505]", "Contents note [505]", "Contents note [505]", "Copy note {956}" ,"044 Country of manufacture [code]", "Date {260}", "092 (copy condition code)", "490 Collection", "351 Access", "502 Bootleg note"]
-for item in items:
-    Lb2.insert(END,item)
-
-#ignore
-
-deleteColumnButton = Button(root, text="Delete Column", command=clickedDeleteColumn)
-resetColumnsButton = Button(root, text="Reset Columns", command=clickedResetColumn)
-deleteColumnButton.grid(column=2, row=5)
-resetColumnsButton.grid(column=3, row=5)
-columnLabel = Label(root, text="Columns")
-columnLabel.grid(column=0,row=5)
-Lb2.grid(column=1, row=5)
 
 
 def getDesktopReleases(dis):
@@ -129,7 +89,7 @@ def runFun():
     if locationLabel.cget("text") == "Select a File Location!":
         messagebox.showerror("No File Location Selected", "Please select a file location")
     else:
-        d = discogs_client.Client('my_user_agent/1.0', user_token='oZENLBNZAGdNfSaGNEncACkrSPFrdzZLvCTUGslh')
+        d = discogs_client.Client('my_user_agent/1.0', user_token=userTokentxt.get())
         releases = getDesktopReleases(d)
         columns = Lb2.get(0, 'end')
         f = open(os.path.join(locationLabel.cget("text"), "output.csv"), "w")
@@ -189,8 +149,74 @@ def runFun():
             f.close()
 
 
-runButton = Button(root, text="Run", command=runFun)
-runButton.grid(column=1, row=6)
+root.rowconfigure(1, minsize=500)
+root.columnconfigure(1, minsize=500)
+
+urlFrame = Frame(root)
+
+lbl = Label(urlFrame, text="Enter in URL")
+lbl.grid(column=0, row=0)
+
+txt = Entry(urlFrame, width=20)
+txt.grid(column=1, row=0, sticky="ew")
+
+userTokenlbl = Label(urlFrame, text="Enter in user token")
+userTokenlbl.grid(column=0, row=1)
+
+userTokentxt = Entry(urlFrame, width=20)
+userTokentxt.grid(column=1, row=1, sticky="ew")
+
+urlFrame.grid(column=0, row=0, sticky="ew")
+
+entryFrame = Frame(root)
+
+Lb1 = Listbox(entryFrame)
+Lb1.grid(column=0, row=1, sticky="nsew")
+
+buttonFrame = Frame(entryFrame)
+addBtn = Button(buttonFrame, text="Add", command=clickedAdd)
+deleteSelectedBtn = Button(buttonFrame, text="Delete", command=clickedDelete)
+deleteLastBtn = Button(buttonFrame, text="Delete Last", command=clickedDeleteLast)
+clearBtn = Button(buttonFrame, text="Clear", command=clickedClear)
+# Set Button Grid
+
+
+buttonFrame.grid(column=0, row=0, sticky="w")
+addBtn.grid(column=0, row=0, sticky="w")
+deleteSelectedBtn.grid(column=1, row=0, sticky="w")
+deleteLastBtn.grid(column=2, row=0, sticky="w")
+clearBtn.grid(column=3, row=0, sticky="w")
+
+entryFrame.grid(column=0, row=1, sticky="nsew")
+
+optionsFrame = Frame(root)
+
+pathLabel = Label(optionsFrame, text="File Location")
+pathButton = Button(optionsFrame, text="Select", command=select_file)
+locationLabel = Label(optionsFrame, text="Select a File Location!")
+pathLabel.grid(column=0,row=0)
+pathButton.grid(column=0,row=1)
+locationLabel.grid(column=0,row=2)
+
+#List of columns
+Lb2 = Listbox(optionsFrame)
+items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}", "Title", "Contributor 1", "Genre 1", "Genre 2", "Genre 3", "Genre 4", "Format {310}", "Recording address {502}", "Contents note [505]", "Contents note [505]", "Contents note [505]", "Copy note {956}" ,"044 Country of manufacture [code]", "Date {260}", "092 (copy condition code)", "490 Collection", "351 Access", "502 Bootleg note"]
+for item in items:
+    Lb2.insert(END,item)
+
+deleteColumnButton = Button(optionsFrame, text="Delete Column", command=clickedDeleteColumn)
+resetColumnsButton = Button(optionsFrame, text="Reset Columns", command=clickedResetColumn)
+columnLabel = Label(optionsFrame, text="Columns")
+columnLabel.grid(column=0,row=3)
+Lb2.grid(column=0, row=4, sticky="ew")
+deleteColumnButton.grid(column=0, row=5)
+resetColumnsButton.grid(column=0, row=6)
+
+runButton = Button(optionsFrame, text="Run", command=runFun)
+runButton.grid(column=0, row=7)
+
+optionsFrame.grid(column=1, row=1, sticky="ns")
+
 
 root.bind("<Return>", enterPressed)
 root.bind("<BackSpace>", backSpacePressed)

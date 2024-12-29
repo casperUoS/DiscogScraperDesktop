@@ -4,9 +4,9 @@ This is a Desktop version of the discog_scraper package, designed for usability 
 
 The purpose of this software is to be able to get data from a list of Discog release links and then create a csv document containing information from those links.
 
-To download the Mac version of the app, click <a id="raw-url" href="https://raw.githubusercontent.com/casperUoS/DiscogScraperDesktop/main/macApp.zip">here</a>.
+To download the Mac version of the app, click <a id="raw-url" href="https://raw.githubusercontent.com/casperUoS/DiscogScraperDesktop/master/discogScraperDesktop.zip">here</a>.
 
-To download the Windows version of the app, click <a id="raw-url" href="https://raw.githubusercontent.com/casperUoS/DiscogScraperDesktop/main/windowsApp.zip">here</a>.
+Windows version should be out by the 12/08.
 
 ## User guide
 
