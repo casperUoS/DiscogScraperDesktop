@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="469cc4f0-f686-4f5d-87e3-7749977d6572" name="Changes" comment="re-added macApp.zip">
+    <list default="true" id="469cc4f0-f686-4f5d-87e3-7749977d6572" name="Changes" comment="binary fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/discogScraperDesktop/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/discogScraperDesktop/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/discogScraperDesktop/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/discogScraperDesktop/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/discogScraperDesktop/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/discogScraperDesktop/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/discogScraperDesktop/discogScraperDesktop.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/discogScraperDesktop/discogScraperDesktop.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/discogScraperDesktop/warn-discogScraperDesktop.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/discogScraperDesktop/warn-discogScraperDesktop.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discogScraperDesktop.py" beforeDir="false" afterPath="$PROJECT_DIR$/discogScraperDesktop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/discogScraperDesktop" beforeDir="false" afterPath="$PROJECT_DIR$/dist/discogScraperDesktop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/discogScraperDesktop" beforeDir="false" afterPath="$PROJECT_DIR$/windowsApp.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;casperUoS&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/casperUoS/DiscogScraperDesktop.git&quot;,
+    &quot;accountId&quot;: &quot;9c6466ab-8e0f-459f-b3e3-fa0cf34c9a7b&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -52,6 +59,7 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Layout-changes&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/casperdancy/Documents/GitHub/DiscogScraperDesktop&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -70,7 +78,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c69650fc56ca-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15619.17" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
@@ -98,6 +107,8 @@
       <workItem from="1724150053231" duration="5436000" />
       <workItem from="1724354268411" duration="624000" />
       <workItem from="1733934885651" duration="678000" />
+      <workItem from="1750932428722" duration="7355000" />
+      <workItem from="1751282274986" duration="5930000" />
     </task>
     <task id="LOCAL-00001" summary="Prototype">
       <option name="closed" value="true" />
@@ -179,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723731527467</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="binary fix">
+      <option name="closed" value="true" />
+      <created>1735493644397</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735493644397</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,10 +227,11 @@
     <MESSAGE value="Added comment" />
     <MESSAGE value="re-added python file" />
     <MESSAGE value="re-added macApp.zip" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-added macApp.zip" />
+    <MESSAGE value="binary fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="binary fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DiscogScraperDesktop$discogScraperDesktop.coverage" NAME="discogScraperDesktop Coverage Results" MODIFIED="1724157684727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DiscogScraperDesktop$main.coverage" NAME="main Coverage Results" MODIFIED="1721338753713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DiscogScraperDesktop$discogScraperDesktop.coverage" NAME="discogScraperDesktop Coverage Results" MODIFIED="1751297691722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

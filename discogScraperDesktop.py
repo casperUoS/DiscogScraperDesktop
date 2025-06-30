@@ -24,6 +24,12 @@ menu.add_cascade(label='File', menu=item)
 root.config(menu=menu)
 
 
+items = ["Curator 949x","Type 949t","Shelfmark {087}", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}",
+             "Date {260}","Copyright {536}", "Manufacture {044}","Title {499}", "Contributor 1 {702}","Contents note {505}", "505-2",
+             "Genre 1 {633}", "Country {631}","Culture {632}", "Tag {650}","Format {310}", "Prod note {502}", "Doc {525}",
+             "Copy condition {092}", "Copy note {956}", "Acq date {959}", "Donor {548}", "Series {440}", "{312}", "Cat {971}"]
+
+
 
 # function to display user text when
 # button is clicked
@@ -50,14 +56,13 @@ def clickedDeleteColumn():
         Lb2.delete(selected_checkbox)
 
 def clickedResetColumn():
-    items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}",
-             "Title", "Contributor 1", "Genre 1", "Genre 2", "Genre 3", "Genre 4", "Format {310}",
-             "Recording address {502}", "Contents note [505]", "Contents note [505]", "Contents note [505]",
-             "044 Country of manufacture [code]", "Date {260}", "092 (copy condition code)", "490 Collection",
-             "351 Access", "502 Bootleg note"]
+    constItems = ["Curator 949x","Type 949t","Shelfmark {087}", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}",
+             "Date {260}","Copyright {536}", "Manufacture {044}","Title {499}", "Contributor 1 {702}","Contents note {505}", "505-2",
+             "Genre 1 {633}", "Country {631}","Culture {632}", "Tag {650}","Format {310}", "Prod note {502}", "Doc {525}",
+             "Copy condition {092}", "Copy note {956}", "Acq date {959}", "Donor {548}", "Series {440}", "{312}", "Cat {971}"]
     Lb2.delete(0, END)
-    for item in items:
-        Lb2.insert(END, item)
+    for i in constItems:
+        Lb2.insert(END, i)
 
 def enterPressed(event):
     clickedAdd()
@@ -66,7 +71,26 @@ def backSpacePressed(event):
     clickedDelete()
     clickedDeleteColumn()
 
+def clickedSave():
+    key = userTokentxt.get()
+    filePath = locationLabel.cget("text")
+    urls = Lb1.get(0, 'end')
+    allText = key + "\n" + filePath + "\n"
+    for url in urls:
+        allText += url + "\n"
+    f = open(os.path.join(os.getcwd(), "discogSave.txt"), "w")
+    f.write(allText)
+    f.close()
 
+def clickedLoad():
+    f = open(os.path.join(os.getcwd(), "discogSave.txt"), "r")
+    file = f.read()
+    lines = file.splitlines()
+    userTokentxt.delete(0,END)
+    userTokentxt.insert(0,lines[0])
+    locationLabel.config(text=lines[1])
+    for i in range(2,len(lines)):
+        Lb1.insert(END,lines[i])
 
 def select_file():
     path = filedialog.askdirectory(title="Select a File")
@@ -88,6 +112,8 @@ def getDesktopReleases(dis):
 def runFun():
     if locationLabel.cget("text") == "Select a File Location!":
         messagebox.showerror("No File Location Selected", "Please select a file location")
+    elif userTokentxt.get() == "":
+        messagebox.showerror("No user token", "Please enter a user token")
     else:
         d = discogs_client.Client('my_user_agent/1.0', user_token=userTokentxt.get())
         releases = getDesktopReleases(d)
@@ -100,10 +126,12 @@ def runFun():
         for release in releases:
             csv = ""
             row = []
-            if "Shelfmark CD" in columns:
+            if "Curator 949x" in columns:
+                row.append("")
+            if "Type 949t" in columns:
+                row.append("")
+            if "Shelfmark {087}" in columns:
                 row.append("")  # shelfmarkCD
-            if "Shelfmark LP" in columns:
-                row.append("")  # shelfMarkLP
             if "Barcode{023}" in columns:
                 row.append("")  # barcode
             if "Company {031}" in columns:
@@ -112,29 +140,50 @@ def runFun():
                 row.append(discogs_scraper.getLabel(release))  # label
             if "Label Match {035}" in columns:
                 row.append(discogs_scraper.getLabelMatch(release))  # labelMatch
-            if "Title" in columns:
+            if "Date {260}" in columns:
+                row.append(discogs_scraper.getDate(release))  # date
+            if "Copyright {536}" in columns:
+                row.append("")
+            if "Manufacture {044}" in columns:
+                row.append(discogs_scraper.getCountry(release))
+            if "Title {499}" in columns:
                 row.append("\"" + release.title + "\"")  # title
             if "Contributor 1" in columns:
                 row.append("")  # contributer1
+            if "Contents note {505}" in columns:
+                row.append("\"" + discogs_scraper.getTracks1(release) + "\"")  # Contents note {505}
+                row.append("\"" + discogs_scraper.getTracks2(release) + "\"")  # 505-2
             for i in columns:
                 if i.startswith("Genre"):
                     row.append("")  # genre
+            if "Country {631}" in columns:
+                row.append(discogs_scraper.getCountry(release))  # country
+            if "Culture {632}" in columns:
+                row.append("")
+            if "Tag {650}" in columns:
+                row.append("")
             if "Format {310}" in columns:
                 row.append(discogs_scraper.getFormat(release))  # format
-            if "Recording address {502}" in columns:
-                row.append("")  # recording address
-            if "Contents note [505]" in columns:
-                row.append("\"" + discogs_scraper.getTracks1(release) + "\"")  # contentsNote1
-                row.append("\"" + discogs_scraper.getTracks2(release) + "\"")  # contentsNote 2
-                row.append("")  # contentsNote 3
+            if "Prod note {502}" in columns:
+                row.append("")
+            if "Doc {525}" in columns:
+                row.append("")
+            if "Copy condition {092}" in columns:
+                row.append("B")  # copycondition code
             if "Copy note {956}" in columns:
                 row.append("")
-            if "044 Country of manufacture [code]" in columns:
-                row.append(discogs_scraper.getCountry(release))  # country
-            if "Date {260}" in columns:
-                row.append(discogs_scraper.getDate(release))  # date
-            if "092 (copy condition code)" in columns:
-                row.append("B")  # copycondition code
+            if "Acq date {959}" in columns:
+                row.append("")  # recording address
+            if "Donor {548}" in columns:
+                row.append("")  # recording address
+            if "Series {440}" in columns:
+                row.append("")  # recording address
+            if "{312}" in columns:
+                row.append("a")  # recording address
+            if "Cat {971}" in columns:
+                row.append("")  # recording address
+            if "Recording address {502}" in columns:
+                row.append("")  # recording address
             if "490 Collection" in columns:
                 row.append("BPI Anti-Piracy Unit Donation")  # Collection
             if "351 Access" in columns:
@@ -189,6 +238,15 @@ clearBtn.grid(column=3, row=0, sticky="w")
 
 entryFrame.grid(column=0, row=1, sticky="nsew")
 
+saveFrame = Frame(entryFrame)
+saveBtn = Button(saveFrame, text="Save config", command=clickedSave)
+loadBtn = Button(saveFrame, text="Load config", command=clickedLoad)
+
+saveFrame.grid(column=0, row=2, sticky="w")
+saveBtn.grid(column=0, row=0, sticky="w")
+loadBtn.grid(column=1, row=0, sticky="w")
+
+
 optionsFrame = Frame(root)
 
 pathLabel = Label(optionsFrame, text="File Location")
@@ -200,7 +258,6 @@ locationLabel.grid(column=0,row=2)
 
 #List of columns
 Lb2 = Listbox(optionsFrame)
-items = ["Shelfmark CD", "Shelfmark LP", "Barcode{023}", "Company {031}", "Label {032}", "Label Match {035}", "Title", "Contributor 1", "Genre 1", "Genre 2", "Genre 3", "Genre 4", "Format {310}", "Recording address {502}", "Contents note [505]", "Contents note [505]", "Contents note [505]", "Copy note {956}" ,"044 Country of manufacture [code]", "Date {260}", "092 (copy condition code)", "490 Collection", "351 Access", "502 Bootleg note"]
 for item in items:
     Lb2.insert(END,item)
 
